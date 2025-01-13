@@ -1,6 +1,7 @@
 # [Bronze II] 단어의 개수 - 1152 
 
 [문제 링크](https://www.acmicpc.net/problem/1152) 
+![image](https://github.com/user-attachments/assets/24ef4add-cdea-4374-bfb0-bb116ba94163)
 
 ### 성능 요약
 
