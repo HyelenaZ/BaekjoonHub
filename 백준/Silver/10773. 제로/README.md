@@ -36,3 +36,107 @@
 
  <p>재민이가 최종적으로 적어 낸 수의 합을 출력한다. 최종적으로 적어낸 수의 합은 2<sup>31</sup>-1보다 작거나 같은 정수이다.</p>
 
+------
+# Hyo's Memo 📚
+
+## 📍 Stack을 활용
+> LIFO(Last-In-First-Out) 특성을 활용
+
+### 기본 구현 🛠
+```python
+# Python
+stack = []  # 리스트로 스택 구현
+```
+
+```java
+// Java
+Stack<Integer> stack = new Stack<>();
+```
+
+### 연산별 구현 방법과 복잡도 ⚡
+#### Python 🐍
+| 연산 | 구현 | 시간복잡도 | 설명 |
+|------|------|------------|------|
+| 숫자 추가 | `stack.append(x)` | O(1) | 스택 맨 뒤에 추가 |
+| 숫자 제거 | `stack.pop()` | O(1) | 가장 최근 숫자 제거 |
+| 합계 계산 | `sum(stack)` | O(n) | 최종 합계 계산 |
+| 비어있는지 확인 | `if stack:` | O(1) | 스택 상태 확인 |
+
+#### Java ☕
+| 연산 | 구현 | 시간복잡도 | 설명 |
+|------|------|------------|------|
+| 숫자 추가 | `stack.push(x)` | O(1) | 스택 맨 뒤에 추가 |
+| 숫자 제거 | `stack.pop()` | O(1) | 가장 최근 숫자 제거 |
+| 합계 계산 | `stack.stream().mapToInt(i->i).sum()` | O(n) | 최종 합계 계산 |
+| 비어있는지 확인 | `!stack.isEmpty()` | O(1) | 스택 상태 확인 |
+
+### 예외 처리 구현 🚨
+#### Python 예외 처리
+```python
+try:
+    K = int(input())  # 입력값 변환 시도
+    if not (1 <= K <= 100000):  # 범위 검증
+        return 0
+except ValueError:  # 정수 변환 실패
+    return 0
+
+try:
+    num = int(input())  # 숫자 입력 처리
+except ValueError:
+    continue  # 잘못된 입력 무시
+```
+
+#### Java 예외 처리
+```java
+try {
+    K = Integer.parseInt(br.readLine());
+    if (K < 1 || K > 100000) {
+        return 0;
+    }
+} catch (NumberFormatException e) {
+    return 0;
+}
+```
+
+### 입력 처리 최적화 💡
+```python
+# Python
+import sys
+input = sys.stdin.readline  # 입력 속도 개선
+```
+
+```java
+// Java
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+```
+
+### 복잡도 분석 📊
+1. **시간 복잡도**
+   - 전체: O(N)
+   - 각 연산: O(1)
+   - 최종 합계: O(N)
+
+2. **공간 복잡도**
+   - 전체: O(N)
+   - 최악의 경우: N개 저장
+   - 평균: N/2개 이하
+
+### 주의사항 ⚠️
+- ✅ 적절한 자료구조 선택
+- ⚠️ 예외 처리 범위 설정
+- 💡 입력 방식 최적화
+- ⚠️ 메모리 사용량 관리
+- 💡 시간 복잡도 고려
+
+### 예외 처리 우선순위 🔍
+1. **입력값 검증**
+   - 범위 확인
+   - 타입 확인
+
+2. **연산 검증**
+   - 스택 상태 확인
+   - 연산 가능 여부 확인
+
+3. **결과값 검증**
+   - 최종 결과 범위 확인
+   - 반환값 유효성 확인
