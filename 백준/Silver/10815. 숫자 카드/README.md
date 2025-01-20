@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 114204 KB, 시간: 368 ms
+메모리: 121104 KB, 시간: 356 ms
 
 ### 분류
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2025년 1월 10일 22:52:52
+2025년 1월 20일 22:37:42
 
 ### 문제 설명
 
@@ -28,71 +28,3 @@
 
  <p>첫째 줄에 입력으로 주어진 M개의 수에 대해서, 각 수가 적힌 숫자 카드를 상근이가 가지고 있으면 1을, 아니면 0을 공백으로 구분해 출력한다.</p>
 
--------------------------------------------
-# Hyo's Memo 📚
-
-## 📍 Set & HashSet 자료구조
-> Python의 set과 Java의 HashSet을 활용한 효율적인 검색 구현
-
-### 기본 구현 🛠
-```python
-# Python
-cards = set()  # 집합으로 구현
-```
-
-```java
-// Java
-HashSet<Integer> cards = new HashSet<>();  // HashSet으로 구현
-```
-
-### 연산별 구현 방법 ⚡
-#### Python 🐍
-| 연산 | 구현 | 시간복잡도 |
-|------|------|------------|
-| 원소 추가 | `set.add(x)` | O(1) |
-| 원소 검색 | `x in set` | O(1) |
-| 집합 생성 | `set(iterable)` | O(n) |
-
-#### Java ☕
-| 연산 | 구현 | 시간복잡도 |
-|------|------|------------|
-| 원소 추가 | `hashSet.add(x)` | O(1) |
-| 원소 검색 | `hashSet.contains(x)` | O(1) |
-| 크기 확인 | `hashSet.size()` | O(1) |
-
-### 입력 처리 최적화 💡
-#### Python
-```python
-# set으로 직접 변환
-cards = set(input().split())
-```
-
-#### Java
-```java
-// StringTokenizer 활용
-StringTokenizer st = new StringTokenizer(br.readLine());
-while(st.hasMoreTokens()) {
-    cards.add(Integer.parseInt(st.nextToken()));
-}
-```
-
-### 주의사항 ⚠️
-#### Python
-- ✅ 중복값 자동 제거
-- ⚠️ 순서 보장 안됨
-- 💡 해시 기반 검색
-
-#### Java
-- ✅ null 값 허용
-- ⚠️ 순서 보장 안됨
-- 💡 equals(), hashCode() 오버라이드 주의
-
-## 📍 복잡도 분석
-### 시간 복잡도 ⏱️
-- **생성**: O(N)
-- **검색**: O(1)
-- **전체**: O(N + M)
-
-### 공간 복잡도 💾
-- **저장공간**: O(N)
-- **결과저장**: O(M)
