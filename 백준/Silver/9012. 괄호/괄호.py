@@ -1,20 +1,17 @@
 import sys
 input = sys.stdin.readline
 
-def check_vps(string):
-    stack = []
-
-    for char in string:
+def check_vps(s):
+    count = 0
+    for char in s.strip():
         if char == '(':
-            stack.append(char)
+            count += 1
         elif char == ')':
-            if not stack:
-                return "NO"
-            stack.pop()
-            
-    return "YES" if not stack else "NO"
+            count -= 1
+        if count < 0:
+            return "NO"
+    return "NO" if count else "YES"
 
-N= int(input())
+N = int(input())
 for _ in range(N):
-    string = input().strip()
-    print(check_vps(string))
+    print(check_vps(input()))
