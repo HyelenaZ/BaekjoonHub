@@ -1,15 +1,12 @@
-### 240111 : SUM_OF_2MATRIX
-N, M = map(int, input().split())
+import sys
+input = sys.stdin.readline
 
-matrix_A = []
-for _ in range(N):
-    matrix_A.append(list(map(int, input().split())))
+N, M = map(int, input().strip().split())
+
+A = [list(map(int, input().split())) for _ in range(N)]
+B = [list(map(int, input().split())) for _ in range(N)]
+
 for i in range(N):
-    row_B = list(map(int, input().split()))
-    
-    result_row = []
     for j in range(M):
-        sum_value = matrix_A[i][j] + row_B[j]
-        result_row.append(sum_value)
-    
-    print(f'{" ".join(map(str, result_row))}')
+        print(A[i][j] + B[i][j], end =' ')
+    print()
