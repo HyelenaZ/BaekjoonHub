@@ -1,15 +1,18 @@
-from itertools import combinations
+def blackjack(n, m, cards):
+    max_sum = 0
+    for i in range(n-2):
+        for j in range(i+1, n-1):
+            for k in range(j+1, n):
+                card_sum = cards[i] + cards[j] + cards[k]
+                if card_sum <= m:
+                    max_sum = max(max_sum, card_sum)
+    return max_sum
 
-def find_blackjack(N, M, cards):
-    nearest_M = 0
-    for comb in combinations(cards, 3):
-        current_sum = sum(comb)
-        if current_sum <= M and current_sum > nearest_M:
-            nearest_M = current_sum
-    return nearest_M
-
-N, M = map(int, input().split())
+n, m = map(int, input().split())
 cards = list(map(int, input().split()))
 
-result = find_blackjack(N, M, cards)
-print(result)
+if not (3 <= n <= 100 and 10 <= m <= 300000):
+    print("입력값이 유효하지 않음")
+else:
+    result = blackjack(n, m, cards)
+    print(result)
