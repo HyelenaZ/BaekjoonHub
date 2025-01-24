@@ -26,3 +26,33 @@
 
  <p>첫째 줄에 준하의 놀람을 출력한다. 놀람은 아이디 뒤에 ??!를 붙여서 나타낸다.</p>
 
+---
+# Hyo's Memo 📚
+## 📍 Python 문자열 연산
+### 주요 메서드 ⚡
+| 메서드 | 설명 | 시간복잡도 |
+|--------|------|------------|
+| `+` | 문자열 연결 | O(n+m) |
+| `join()` | 문자열 결합 | O(n) |
+| `format()` | 문자열 포맷팅 | O(n) |
+
+### Java 문자열 처리 ☕
+```java
+// StringBuilder 사용
+StringBuilder sb = new StringBuilder(input);
+sb.append("??!");
+
+// String concat
+String result = input + "??!";
+```
+
+### 복잡도 분석 📊
+#### 시간 복잡도
+- 입력 처리: O(1)
+- 문자열 연결: O(n)
+- 전체: O(n)
+
+#### 공간 복잡도
+- 입력 저장: O(n)
+- 결과 문자열: O(n)
+- 전체: O(n)
