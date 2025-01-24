@@ -1,4 +1,1 @@
-lst = []
-for num in map(int, input().split()):
-    lst.append(num)
-print(sum(lst))
+print(sum(map(int, input().split())))
