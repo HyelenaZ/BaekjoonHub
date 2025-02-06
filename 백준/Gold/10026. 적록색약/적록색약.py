@@ -8,7 +8,6 @@ for _ in range(N):
     color_lst.append(row)
 
 def count_area(x, y, color, visited, is_colorblind=False):
-    # 상하좌우 이동 방향
     moves = [(-1, 0), (1, 0), (0, -1), (0, 1)]
     
     queue = deque([(x, y)])
@@ -17,12 +16,10 @@ def count_area(x, y, color, visited, is_colorblind=False):
     while queue:
         now_x, now_y = queue.popleft()
         
-        # 상하좌우 탐색
         for move_x, move_y in moves:
             next_x = now_x + move_x
             next_y = now_y + move_y
             
-            # 그리드 범위를 벗어나면 스킵
             if not (0 <= next_x < N and 0 <= next_y < N):
                 continue
             
