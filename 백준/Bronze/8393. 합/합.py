@@ -1,11 +1,8 @@
-while True:
-    n = int(input())
+import sys
 
-    sum = 0
-    if (1<= n <= 10_000):
-        for num in range(n+1):
-            sum += num
-        break
-    else:
-        int(input())
+n = int(sys.stdin.readline())
+sum = 0
+for i in range(1, n+1):
+    sum += i
+
 print(sum)
