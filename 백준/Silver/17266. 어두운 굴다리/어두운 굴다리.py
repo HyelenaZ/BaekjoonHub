@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 N = int(input())
 M = int(input())
 lamp_positions = list(map(int, input().split()))
