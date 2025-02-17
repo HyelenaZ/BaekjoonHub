@@ -1,7 +1,7 @@
 import sys
 input = sys.stdin.readline
-N, M = map(int, input().split())
-trees = list(map(int, input().split()))
+N, M = map(int, input().rstrip().split())
+trees = list(map(int, input().rstrip().split()))
 
 start = 0
 end = max(trees)
